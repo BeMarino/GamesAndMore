@@ -1,0 +1,19 @@
+<?php
+	include("db.php");
+	include("functions.php");
+	
+	if(!isset($_SESSION)){
+    session_start();
+	}
+	
+	$articolo=isset($_POST['id'])? clear($_POST['id']):false;
+	$categoria=isset($_POST['categoria'])? clear($_POST['categoria']):false;
+	$nome=isset($_POST['nome'])? clear($_POST['nome']):false;
+
+	
+	if(mysqli_query($db,"UPDATE `articoli` SET `column_name` = `new_value' [WHERE condition];from articoli WHERE id='$articolo'")){
+		echo 1;
+	}else{
+		echo 2;
+	}
+?>	
